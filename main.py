@@ -17,7 +17,7 @@ BG = (13, 18, 30)
 PANEL = (23, 31, 46)
 PANEL_EDGE = (38, 49, 70)
 INK = (242, 246, 252)
-INK_DIM = (158, 172, 192)
+INK_DIM = (170, 184, 204)  # rev2: brighter for legibility at 300px
 RED = (226, 74, 74)
 ORANGE = (240, 152, 62)
 BLUE = (74, 144, 236)
@@ -245,7 +245,10 @@ for idx, st in enumerate(STORIES):
     for ln in hlines[:2]:
         draw_text(ln, x + 20, hy, INK, hs)
         hy += 7 * hs + 8
-    hy += 6
+
+    # revision 2: hairline rule under the headline block for cleaner separation
+    rect(x + 20, hy + 2, x + PW - 24, hy + 3, (48, 62, 88))
+    hy += 12
 
     # body copy
     bs = 2
@@ -331,7 +334,7 @@ CLIP = None
 FY0 = PY0 + 2 * PH + GAPY + 14   # first strip below the panels
 rect(40, FY0, 984, FY0 + 38, PANEL)
 rect(40, FY0, 984, FY0 + 3, YELLOW)
-draw_text('ETHIOPIA AND ERITREA MASS FORCES ON THEIR BORDER', 60, FY0 + 12, YELLOW, 2)
+draw_text('ETHIOPIA AND ERITREA MASS FORCES ON THEIR BORDER  (REUTERS)', 56, FY0 + 12, YELLOW, 2)
 
 FY2 = FY0 + 52
 rect(40, FY2, 984, FY2 + 38, PANEL)
