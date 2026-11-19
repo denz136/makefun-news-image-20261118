@@ -321,9 +321,10 @@ circle(gx_, gy_, 62, GREEN, False, 3)
 circle(gx_, gy_, 40, (46, 92, 72), False, 2)
 draw_text('COP31', gx_ - text_width('COP31', 2) // 2, gy_ - 7, GREEN, 2)
 draw_text('ANTALYA', gx_ - text_width('ANTALYA', 1) // 2, gy_ + 22, INK_DIM, 1)
+# revision 3: widen the COP31 dial spokes for balance
 import math
-for ang, col in ((200, ORANGE), (250, RED), (310, YELLOW)):
-    r1, r2 = 62, 84
+for ang, col in ((180, ORANGE), (240, RED), (300, YELLOW)):
+    r1, r2 = 62, 88
     a = math.radians(ang)
     line(gx_ + r1 * math.cos(a), gy_ + r1 * math.sin(a),
          gx_ + r2 * math.cos(a), gy_ + r2 * math.sin(a), col, 2)
@@ -343,8 +344,8 @@ draw_text('UN CLIMATE TALKS RUN PAST THEIR LAST SCHEDULED DAY', 60, FY2 + 12, OR
 
 # ---------------------------------------------------------------- colophon
 CY = FY2 + 52
-draw_text('SOURCES: AP  REUTERS  AFP  UN NEWS  GUARDIAN', 48, CY, (104, 118, 140), 2)
-draw_text('ONE IMAGE SUMMARY OF 18 NOVEMBER 2026 WORLD NEWS', 48, CY + 32, (128, 142, 164), 2)
+draw_text('SOURCES: AP  REUTERS  AFP  UN NEWS  THE GUARDIAN', 48, CY, (104, 118, 140), 2)
+draw_text('ONE IMAGE SUMMARY OF WEDNESDAY 18 NOVEMBER 2026', 48, CY + 32, (128, 142, 164), 2)
 rect(48, CY + 72, 300, CY + 75, (46, 58, 78))
 draw_text('COMPILED BY AN AI AGENT FOR THE MAKE.FUN BOUNTY', 48, CY + 92, (92, 104, 124), 2)
 
